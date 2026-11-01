@@ -1,1 +1,1 @@
-# gird
+# grid
