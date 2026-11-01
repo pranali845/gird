@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: repeat(3, 180px);
+
+    gap: 10px;
+}
+
+/* Common grid item style */
+
+.grid-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: flex-start;
+
+    padding: 20px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+    overflow: hidden;
+}
+
+/* Individual grid boxes */
+
+.box1 {
+    grid-column: span 1;
+    grid-row: span 1;
+
+    background-image: url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=600");
+}
+
+.box2 {
+    grid-column: span 3;
+
+    background-image: url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1000");
+}
+
+.box3 {
+    grid-column: span 2;
+
+    background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1000");
+}
+
+.box4 {
+    grid-column: span 2;
+
+    background-image: url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=800");
+}
+
+.box5 {
+    grid-column: span 1;
+
+    background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600");
+}
+
+.box6 {
+    grid-column: span 1;
+
+    background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600");
+}
+
+.box7 {
+    grid-column: span 2;
+
+    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800");
+}
+
+/* Tablet responsive */
+
+@media (max-width: 768px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .grid-item {
+        min-height: 160px;
+    }
+
+    .box2,
+    .box3,
+    .box4,
+    .box7 {
+        grid-column: span 2;
+    }
+
+}
+
+/* Mobile responsive */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .grid-item {
+        grid-column: span 1 !important;
+        min-height: 180px;
+        font-size: 16px;
+    }
+
+}

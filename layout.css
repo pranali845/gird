@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+.container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    grid-template-rows: 50px 150px 100px 50px;
+
+    grid-template-areas:
+        "navbar navbar navbar navbar"
+        "sidebar main main main"
+        "sidebar content1 content2 content3"
+        "sidebar footer footer footer";
+
+    gap: 5px;
+
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 5px;
+
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar */
+.navbar {
+    grid-area: navbar;
+    background-color: #8df5f5;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #00e5e5;
+}
+
+/* Main */
+.main {
+    grid-area: main;
+    background-color: #80eeee;
+}
+
+/* Content 1 */
+.content1 {
+    grid-area: content1;
+    background-color: #64f5ce;
+}
+
+/* Content 2 */
+.content2 {
+    grid-area: content2;
+    background-color: #64f5ce;
+}
+
+/* Content 3 */
+.content3 {
+    grid-area: content3;
+    background-color: #64f5ce;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #16d6ae;
+}
+
+/* Common styling */
+.navbar,
+.sidebar,
+.main,
+.content1,
+.content2,
+.content3,
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+
+    .container {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 40px 40px 150px 70px 70px 70px 40px;
+
+        grid-template-areas:
+            "navbar"
+            "sidebar"
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "footer";
+    }
+
+    body {
+        padding: 10px;
+    }
+
+}
